@@ -62,7 +62,7 @@ jobs:
             /nix
             ~/.cache/nix
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         id: nix-archives
         with:
           name: nix-archives-${{ runner.os }}
@@ -100,7 +100,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         id: nix-archives
         with:
           name: nix-archives-${{ runner.os }}
@@ -145,7 +145,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         id: nix-archives
         with:
           name: nix-archives-${{ runner.os }}
@@ -184,7 +184,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         id: nix-archives
         with:
           name: nix-archives-${{ runner.os }}
@@ -207,11 +207,11 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: nix-archives-Linux
           path: /tmp/archives
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: nix-archives-macOS
           path: /tmp/archives
